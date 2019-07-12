@@ -19,7 +19,7 @@ ENV CONNECT_PLUGIN_PATH="/usr/share/java,/usr/share/confluent-hub-components"
 
 RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:latest
 
-COPY ./docker-compose.yml /bin/schema/
+#COPY ./docker-compose.yml /bin/schema/
 
 #RUN cd /bin/schema/ && docker-compose up -d build
 
