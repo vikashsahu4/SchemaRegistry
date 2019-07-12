@@ -17,7 +17,7 @@ FROM centos/python-36-centos7
 
 USER root
 
-RUN yum install git
+RUN yum install git -y
 
 RUN git clone git clone https://github.com/confluentinc/cp-docker-images
 
