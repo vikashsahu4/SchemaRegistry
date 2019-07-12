@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 FROM centos
-FROM confluentinc/cp-kafka-connect:5.2.2
-
 USER root
+
+FROM confluentinc/cp-kafka-connect:5.2.2
 
 FROM nginx
 RUN yum -y update && yum install -y curl 
