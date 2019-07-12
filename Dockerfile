@@ -19,5 +19,7 @@ USER root
 
 RUN yum install git -y
 
-RUN git clone https://github.com/confluentinc/cp-docker-images
+RUN git clone https://github.com/confluentinc/cp-docker-images && cd cp-docker-images && git checkout 5.2.2-post
+
+RUN cd examples/cp-all-in-one/
 
