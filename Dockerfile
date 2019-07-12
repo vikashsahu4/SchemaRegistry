@@ -17,7 +17,8 @@ FROM confluentinc/cp-kafka-connect:5.2.2
 
 USER root
 
-RUN yum install curl 
+FROM nginx
+RUN yum -y update && yum install -y curl 
 
 RUN sudo yum install docker-ce docker-ce-cli containerd.io 
 
