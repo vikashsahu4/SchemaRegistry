@@ -1,5 +1,3 @@
-FROM python 
-USER root
 FROM confluentinc/cp-kafka-connect:5.2.2
 
 ENV CONNECT_PLUGIN_PATH="/usr/share/java,/usr/share/confluent-hub-components"
