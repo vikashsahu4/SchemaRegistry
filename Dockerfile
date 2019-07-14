@@ -1,6 +1,14 @@
-FROM confluentinc/cp-kafka-connect:5.2.2
+FROM confluent/platform
 
-ENV CONNECT_PLUGIN_PATH="/usr/share/java,/usr/share/confluent-hub-components"
+MAINTAINER vsahu@redhat.com
 
-RUN confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:latest
+COPY schema-registry-docker.sh /usr/local/bin/
 
+#TODO Schema Registry needs a log directory.
+RUN ["chown", "-R", "confluent:confluent", "/etc/schema-registry/schema-registry.properties"]
+RUN ["chmod", "+x", "/usr/local/bin/schema-registry-docker.sh"]
+
+EXPOSE 8081
+
+USER confluent
+ENTRYPOINT ["/usr/local/bin/schema-registry-docker.sh"]
