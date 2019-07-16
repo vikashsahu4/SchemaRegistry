@@ -10,5 +10,5 @@ RUN ["chmod", "+x", "/usr/local/bin/schema-registry-docker.sh"]
 
 EXPOSE 8081
 
-USER confluent
+USER root
 ENTRYPOINT ["/usr/local/bin/schema-registry-docker.sh"]
